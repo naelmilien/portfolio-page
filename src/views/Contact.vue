@@ -127,5 +127,9 @@ i {
   #contacts .contact-section-title {
     visibility: hidden;
   }
+
+  .btn {
+    width: 80%;
+  }
 }
 </style>
