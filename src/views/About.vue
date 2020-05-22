@@ -31,7 +31,7 @@
       </h3>
       <h3>
         Front-end frameworks:
-        <span class="answer">Angular, React, Vue</span>
+        <span class="answer">Angular, Vue</span>
       </h3>
       <h3>
         Back-end frameworks:
