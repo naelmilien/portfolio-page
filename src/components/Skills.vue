@@ -34,7 +34,7 @@ export default {
   width: 50%;
   font-weight: lighter;
   margin-bottom: 0px;
-  text-align: center;
+  text-align: left;
   margin: 10px auto;
 }
 
@@ -46,6 +46,11 @@ ul {
 @media screen and (max-width: 975px) {
   ul {
     list-style-type: none;
+  }
+
+  .skills {
+    text-align: center;
+    font-size: 45px;
   }
 }
 </style>
