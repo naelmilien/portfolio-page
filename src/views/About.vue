@@ -3,48 +3,35 @@
     <div class="profile-pic">
       <img src="../assets/profile-pic.jpeg" alt="picture of me" />
     </div>
-    <div class="info">
-      <h3>
-        Name:
-        <span class="answer">Nathanael Milien</span>
-      </h3>
-
-      <h3>
-        Nickname:
-        <span class="answer">Nate</span>
-      </h3>
-      <h3>
-        Home country:
-        <span class="answer">Haiti</span>
-      </h3>
-      <h3>
-        Adopted country:
-        <span class="answer">USA</span>
-      </h3>
-      <h3>
-        Human languages:
-        <span class="answer">French, Haitian Creole, English</span>
-      </h3>
-      <h3>
-        Programming languages:
-        <span class="answer">JavaScript, TypeScript, C#, HTML, CSS</span>
-      </h3>
-      <h3>
-        Front-end frameworks:
-        <span class="answer">Angular, Vue</span>
-      </h3>
-      <h3>
-        Back-end frameworks:
-        <span class="answer">Express.js, .NET Core</span>
-      </h3>
-      <h3>
-        Hobbies:
-        <span class="answer">TV, reading, Soccer, and other outdoors activities.</span>
-      </h3>
-    </div>
+    <ul class="info">
+      <li v-for="(value, name) in object" v-bind:key="name">
+        {{name}}:
+        <span class="answer">{{value}}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
+<script>
+export default {
+  el: "#about",
+  data: () => {
+    return {
+      object: {
+        name: "nathanael milien",
+        nickname: "nate",
+        "home country": "Haiti",
+        "adopted country": "USA",
+        "human languages": "english, french, haitian creole",
+        "programming languages": "JavaScript, TypeScript, C#, HTML, CSS",
+        "front-end frameworks": "angular, vue",
+        "back-end frameworks": "express.js, .NET Core",
+        hobbies: "TV, reading, soccer, hiking, and being outdoors"
+      }
+    };
+  }
+};
+</script>
 
 
 <style scoped>
@@ -61,11 +48,18 @@ img {
   justify-content: space-evenly;
   font-family: "Anton", sans-serif;
   margin-top: 10%;
+  font-size: 18px;
 }
 
-h3 {
+ul {
+  list-style-type: none;
+}
+
+li {
   color: #8bf98b;
   font-weight: lighter;
+  text-transform: capitalize;
+  padding: 5px;
 }
 
 .answer {

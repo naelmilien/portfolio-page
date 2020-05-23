@@ -2,45 +2,60 @@
   <div id="projects">
     <h1 class="project-section-title">Projects</h1>
     <div class="projects">
-      <div class="project">
-        <img
-          src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
-          alt="project one"
-        />
-      </div>
-      <div class="project">
-        <img
-          src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
-          alt="project one"
-        />
-      </div>
-      <div class="project">
-        <img
-          src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
-          alt="project one"
-        />
-      </div>
-      <div class="project">
-        <img
-          src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
-          alt="project one"
-        />
-      </div>
-      <div class="project">
-        <img
-          src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
-          alt="project one"
-        />
-      </div>
-      <div class="project">
-        <img
-          src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
-          alt="project one"
-        />
+      <div class="project" v-for="project in projects" v-bind:key="project.alt">
+        <img :src="project.src" :alt="project.alt" />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  el: "#projects",
+  data: () => {
+    return {
+      projects: [
+        {
+          src:
+            "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg",
+          alt: "project one",
+          description: "This is project one"
+        },
+        {
+          src:
+            "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg",
+          alt: "project one",
+          description: "This is project two"
+        },
+        {
+          src:
+            "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg",
+          alt: "project one",
+          description: "This is project three"
+        },
+        {
+          src:
+            "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg",
+          alt: "project one",
+          description: "This is project four"
+        },
+        {
+          src:
+            "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg",
+          alt: "project one",
+          description: "This is project five"
+        },
+        {
+          src:
+            "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg",
+          alt: "project one",
+          description: "This is project 6"
+        }
+      ]
+    };
+  }
+};
+</script>
 
 <style scoped>
 #projects {

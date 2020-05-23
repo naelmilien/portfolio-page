@@ -4,40 +4,62 @@
     <h1 class="email-message">Email me at nmilien09@gmail.com</h1>
     <h1 class="or">Or...</h1>
     <h1 class="social-media">Catch me on the web by clicking on one of the buttons below</h1>
-    <div class="social-media-links">
-      <a href="https://github.com/naelmilien" target="_blank" class="github-btn btn">
-        <i class="fab fa-github fa-2x"></i>
-        <span class="social-button-text">On GitHub</span>
+    <div class="social-media-links" v-for="data in socialData" v-bind:key="data.className">
+      <a :href="data.src" target="_blank" :class="data.className">
+        <i :class="data.icon"></i>
+        <span class="social-button-text">On {{data.name}}</span>
       </a>
-      <a
-        href="https://www.linkedin.com/in/nathanaelmilien/"
-        target="_blank"
-        class="linkedin-btn btn"
-      >
-        <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-        <span class="social-button-text">On LinkedIn</span>
-      </a>
-      <!-- <a href="https://codepen.io/naelmilien/" target="_blank" class="codepen-btn btn">
-        <i class="fab fa-codepen fa-2x"></i>
-        <span class="social-button-text">On Codepen</span>
-      </a>-->
-      <a href="https://twitter.com/naelmilien" target="_blank" class="twitter-btn btn">
-        <i class="fab fa-twitter fa-2x"></i>
-        <span class="social-button-text">On Twitter</span>
-      </a>
-
-      <a href="https://twitter.com/naelmilien" target="_blank" class="hackerrank-btn btn">
-        <i class="fab fa-hackerrank fa-2x"></i>
-        <span class="social-button-text">On Hacckerrank</span>
-      </a>
-      <!-- <div class="free-code-camp-btn btn">
-            <a href="https://www.freecodecamp.com/naelmilien" target="_blank" role="button"
-              ><i class="fab fa-free-code-camp fa-2x"><span class="social-button-text">On freeCodeCamp</span></i></a
-            >
-      </div>-->
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  el: "#contact",
+  data: () => {
+    return {
+      socialData: [
+        {
+          name: "GitHub",
+          icon: "fab fa-github fa-2x",
+          src: "https://github.com/naelmilien",
+          className: "github-btn btn"
+        },
+        {
+          name: "LinkedIn",
+          icon: "fab fa-linkedin fa-2x",
+          src: "https://www.linkedin.com/in/nathanaelmilien/",
+          className: "linkedin-btn btn"
+        },
+        {
+          name: "Twitter",
+          icon: "fab fa-twitter fa-2x",
+          src: "https://twitter.com/naelmilien",
+          className: "twitter-btn btn"
+        },
+        {
+          name: "Hackerrank",
+          icon: "fab fa-hackerrank fa-2x",
+          src: "https://www.hackerrank.com/naelmilien",
+          className: "hackerrank-btn btn"
+        }
+        // {
+        //   name: "freeCodecamp",
+        //   icon: "fab fa-free-code-camp fa-2x",
+        //   src: "https://www.freecodecamp.org/naelmilien",
+        //   className: "freecodecamp-btn btn"
+        // },
+        // {
+        //   name: "Codepen",
+        //   icon: "fab fa-codepen fa-2x",
+        //   src: "https://codepen.io/naelmilien",
+        //   className: "codepen-btn btn"
+        // }
+      ]
+    };
+  }
+};
+</script>
 
 <style scoped>
 #contacts .contact-section-title {
@@ -116,6 +138,10 @@ i {
 .email-message,
 .social-media {
   color: #8bf98b;
+}
+
+.social-media-links {
+  margin: 5px;
 }
 
 @media screen and (max-width: 560px) {

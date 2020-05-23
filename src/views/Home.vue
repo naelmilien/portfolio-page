@@ -1,38 +1,26 @@
 <template>
   <div id="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <div id="intro">
-      <p class="intro">
-        Hi, I'm Nate.
-        <br />
-        <span class="job-title">A web developer</span>.
-      </p>
+      <Intro greeting="Hi, I'm Nate." description="A web developer" />
     </div>
     <div id="skills">
-      <h1 class="skills">Skills</h1>
-      <ul>
-        <li>Front End Web Development</li>
-        <li>Back-End Web Development</li>
-        <li>Full-Stack Web Development</li>
-        <li>Test-Driven Development</li>
-        <li>Pair Programming</li>
-        <li>Agile Software Development</li>
-      </ul>
+      <Skills />
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+import Intro from "@/components/Intro.vue";
+import Skills from "@/components/Skills.vue";
 
-// export default {
-//   name: "Home",
-//   components: {
-//     HelloWorld
-//   }
-// };
+export default {
+  name: "Home",
+  components: {
+    Intro,
+    Skills
+  }
+};
 </script>
 
 <style scoped>
@@ -50,29 +38,10 @@
   border-right: 1px solid lightgrey;
 }
 
-.job-title {
-  color: #8bf98b;
-}
-
 #skills {
   text-align: left;
   width: 50%;
   margin-left: 10%;
-}
-
-.skills {
-  color: #8bf98b;
-  font-size: 60px;
-  text-decoration: underline;
-  text-decoration-color: #5e5b5e;
-  width: 50%;
-  font-weight: lighter;
-  margin-bottom: 0px;
-}
-
-#skills ul {
-  margin: 0px;
-  font-size: 30px;
 }
 
 @media screen and (max-width: 975px) {
@@ -95,31 +64,26 @@
     text-align: center;
   }
 
-  .skills {
-    text-align: center;
-    margin: 10px auto;
-  }
-
   #skills ul {
     list-style-type: none;
   }
+}
 
-  @media screen and (max-width: 475px) {
-    #home {
-      margin: 5px;
-    }
+@media screen and (max-width: 475px) {
+  #home {
+    margin: 5px;
+  }
 
-    #intro {
-      font-size: 50px;
-    }
+  #intro {
+    font-size: 50px;
+  }
 
-    .skills {
-      font-size: 50px;
-    }
+  .skills {
+    font-size: 50px;
+  }
 
-    li {
-      font-size: 25px;
-    }
+  li {
+    font-size: 25px;
   }
 }
 </style>
